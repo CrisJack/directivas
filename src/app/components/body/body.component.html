@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col"><h1>*ngIf</h1><hr></div>
+    <div class="col"><h1>*ngFor</h1><hr></div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <div *ngIf="mostrar" class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">{{autor.nombre}}</h5>
+              <p class="card-text">{{autor.mensaje}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"><div class="col">
+        <button (click)="mostrar =!mostrar" type="button" class="btn btn-warning">Mostrar/Ocualtar</button>
+      </div>        
+      </div>
+    </div>
+    <div class="col">
+      <div *ngFor="let item of nombres; let indice=index" class="list-group">
+        <button type="button" class="list-group-item list-group-item-action">
+         {{indice+1}} - {{item}}
+        </button>
+        <!-- <button type="button" class="list-group-item list-group-item-action">1-dos</button>
+        <button type="button" class="list-group-item list-group-item-action">2-tres</button>
+        <button type="button" class="list-group-item list-group-item-action">3-cuatro</button>         -->
+      </div>         
+    </div>
+  </div>
+  <div class="row">
+    <div  class="card-columns">
+      <div *ngFor="let pro of productos" class="card">
+        <img src="{{pro.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{pro.title}}</h5>
+          <p class="card-text">{{pro.description}}</p>
+          <small>S/. {{pro.price}}</small>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- <div  class="col">
+      <div *ngFor="let pro of productos"  class="card-colums" style="width: 18rem;">
+        <img src="{{pro.image}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{pro.title}}</h5>
+          <p class="card-text">{{pro.description}}</p>
+          
+        </div>
+      </div>
+    </div> -->
+    <div>
+    <div *ngIf="imagen === 'toby'" class="card" style="width: 18rem;">
+      <img src="assets/img/toby.jpg" class="card-img-top" alt="toby">
+      <div class="card-body">
+        <h5 class="card-title">Toby</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>        
+    </div>
+    </div>
+  </div>
+  
+</div>
